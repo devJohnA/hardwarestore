@@ -1,0 +1,7 @@
+    <?php $description = property_exists($result, 'Description') ? $result->Description : 'No description available.';
+
+// Then, where you're displaying the description:
+echo '<p>' . htmlspecialchars($description) . '</p>';
+    ?>
+
+    nl2br

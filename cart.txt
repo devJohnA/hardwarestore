@@ -1,0 +1,27 @@
+function handleQuantityChange(inputId) {
+    var inputElement = document.getElementById(inputId);
+    var currentValue = parseInt(inputElement.value);
+    var originalQuantity = parseInt(document.getElementById('ORIGQTY' + inputId.slice(3)).value);
+    var maxAllowedQuantity = Math.min(originalQuantity, currentValue);
+    
+    if (currentValue > originalQuantity) {
+        Swal.fire({
+            title: 'Quantity Exceeded',
+            text: 'The quantity you entered is greater than the available quantity. It has been adjusted to the maximum available.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        });
+    }
+    
+    inputElement.value = maxAllowedQuantity;
+
+    var quantityLeftElement = document.getElementById('quantityLeft' + inputId.slice(3));
+    quantityLeftElement.textContent = originalQuantity - maxAllowedQuantity;
+
+    if (isNaN(currentValue) || currentValue < 0) {
+        inputElement.value = 0;
+        quantityLeftElement.textContent = originalQuantity;
+    }
+
+    totalprice();
+}
