@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2024 at 04:57 AM
+-- Generation Time: Sep 14, 2024 at 04:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -276,7 +276,9 @@ CREATE TABLE `stocks` (
 --
 
 INSERT INTO `stocks` (`id`, `images`, `productName`, `productCategory`, `productPrice`, `productStock`, `checkStock`, `productDate`, `productStatus`) VALUES
-(32, 'agent.jpg', 'Hammer SAM High Carbon Tool Steel Claw', 'Paint', 120.00, 120, 5, '2024-09-16', '');
+(29, 'agent.jpg', 'Hey', 'Paint', 232.00, 36, 20, '2024-08-18', ''),
+(30, 'admins.png', 'Hammer SAM High Carbon Tool Steel Claw', 'Paint', 150.00, 118, 20, '2024-08-18', ''),
+(31, 'huss.png', 'sad', 'Ordinary Portland Cement', 23.00, 86, 10, '2024-08-19', '');
 
 -- --------------------------------------------------------
 
@@ -298,7 +300,7 @@ CREATE TABLE `tblautonumber` (
 --
 
 INSERT INTO `tblautonumber` (`ID`, `AUTOSTART`, `AUTOINC`, `AUTOEND`, `AUTOKEY`, `AUTONUM`) VALUES
-(1, 10, 1, 174, 'PROID', 10),
+(1, 10, 1, 136, 'PROID', 10),
 (2, 0, 1, 101, 'ordernumber', 0);
 
 -- --------------------------------------------------------
@@ -376,6 +378,19 @@ CREATE TABLE `tblcustomerreview` (
   `REVIEWDATE` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tblcustomerreview`
+--
+
+INSERT INTO `tblcustomerreview` (`REVIEWID`, `PROID`, `CUSTOMERNAME`, `RATING`, `REVIEWTEXT`, `REVIEWDATE`) VALUES
+(1, 10133, 'John Anthon Dela Cruz', 2, 'Great product sir', '2024-09-14 05:10:27'),
+(2, 10133, 'Alfred Dela Cruz', 1, 'Hakdog', '2024-09-14 05:11:52'),
+(3, 10133, 'Anthony Dela Cruz', 5, 'sd', '2024-09-14 05:14:32'),
+(4, 10133, 'Maria Mercy', 3, 'Nindut kaayu sya sir', '2024-09-14 05:39:29'),
+(5, 10133, 'Bryan James Desuyo', 5, 'Ang ganda naman sir', '2024-09-14 07:48:06'),
+(6, 10133, 'Chad Rhino Quijano', 3, 'Yes sir nindut kaayu sya', '2024-09-14 07:51:53'),
+(7, 10134, 'Samuel Desuyo', 4, 'Chuya kaayu amego o', '2024-09-14 14:15:37');
+
 -- --------------------------------------------------------
 
 --
@@ -424,7 +439,9 @@ CREATE TABLE `tblproduct` (
 --
 
 INSERT INTO `tblproduct` (`PROID`, `PRODESC`, `Description`, `INGREDIENTS`, `PROQTY`, `ORIGINALPRICE`, `PROPRICE`, `CATEGID`, `IMAGES`, `PROSTATS`, `OWNERNAME`, `OWNERPHONE`) VALUES
-(10173, 'Hammer SAM High Carbon Tool Steel Claw', '', '', 3, 0, 120, 20, 'uploaded_photos/agent.jpg', 'Available', '', '');
+(10133, 'sad', 'Made in China<br />Much better in Philipines<br />Not expensive<br />But good quality', '', 2, 0, 23, 20, 'uploaded_photos/cal.png', 'Available', '', ''),
+(10134, 'Hey', 'Made in China<br />The best Product in the world<br />Yes it is the best product', '', 2, 0, 232, 20, 'uploaded_photos/1280 x 720.png', 'Available', '', ''),
+(10135, 'Hammer SAM High Carbon Tool Steel Claw', 'Hey you<br />Yes isr', '', 2, 0, 150, 19, 'uploaded_photos/dash.png', 'Available', '', '');
 
 -- --------------------------------------------------------
 
@@ -456,20 +473,9 @@ INSERT INTO `tblpromopro` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PR
 (105, 10109, 0, 150, 0, 0),
 (113, 10117, 0, 23, 0, 0),
 (117, 10121, 0, 23, 0, 0),
-(133, 10137, 0, 232, 0, 0),
-(135, 10139, 0, 23, 0, 0),
-(136, 10140, 0, 150, 0, 0),
-(139, 10143, 0, 23, 0, 0),
-(140, 10144, 0, 232, 0, 0),
-(141, 10145, 0, 232, 0, 0),
-(142, 10146, 0, 150, 0, 0),
-(147, 10151, 0, 150, 0, 0),
-(160, 10164, 0, 232, 0, 0),
-(161, 10165, 0, 232, 0, 0),
-(162, 10166, 0, 232, 0, 0),
-(163, 10167, 0, 232, 0, 0),
-(164, 10168, 0, 232, 0, 0),
-(169, 10173, 0, 120, 0, 0);
+(129, 10133, 0, 23, 0, 0),
+(130, 10134, 0, 232, 0, 0),
+(131, 10135, 0, 150, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -777,7 +783,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tblautonumber`
@@ -813,7 +819,7 @@ ALTER TABLE `tblorder`
 -- AUTO_INCREMENT for table `tblpromopro`
 --
 ALTER TABLE `tblpromopro`
-  MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT for table `tblsetting`
