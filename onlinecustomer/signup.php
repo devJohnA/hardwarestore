@@ -76,7 +76,6 @@ ini_set('display_errors', 1);
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         html, body {
-            height: 100%;
             background-color: #faf9f6;
             margin: 0;
             display: flex;
