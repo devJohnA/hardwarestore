@@ -291,9 +291,9 @@
 </style>
 <?php
 define('DB_SERVER', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'dried');
+define('DB_USER', 'u510162695_dried');
+define('DB_PASS', '1Dried_password');
+define('DB_NAME', 'u510162695_dried');
 $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 // Check connection
 if (mysqli_connect_errno()) {

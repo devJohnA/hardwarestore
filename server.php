@@ -16,7 +16,7 @@ $errors = array();
 
 
 //connect to database
-$con = mysqli_connect('localhost', 'root', '', 'dried');
+$con = mysqli_connect('localhost', '1Dried_password', '1Dried_password', '1Dried_password');
 
 //for verified email
 

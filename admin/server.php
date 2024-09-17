@@ -16,7 +16,7 @@ $errors = array();
 
 
 //connect to database
-$con = mysqli_connect('localhost', 'root', '', 'dried');
+$con = mysqli_connect('localhost', 'u510162695_dried', '1Dried_password', 'u510162695_dried');
 
     //if user click continue button in forgot password form
     if(isset($_POST['check-email'])){
